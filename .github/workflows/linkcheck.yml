@@ -5,10 +5,6 @@ on:
   schedule:
     - cron: '0 0 1 * *' # Every month
 
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
-
 jobs:
   linkcheck:
     runs-on: ubuntu-latest
