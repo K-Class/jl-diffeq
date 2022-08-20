@@ -1,16 +1,15 @@
 jupyter_book_task:
   environment:
     GH_TOKEN: ENCRYPTED[!bbf36430e8ba7b6a1dc3ada56ab696fbc35cb89d1d9efd3ce370d1fbc101b670c79fe815b9972d66a9d2993ed7f449eb!]
-    JULIA_NUM_THREADS: 4
+    JULIA_NUM_THREADS: 8
   auto_cancellation: true
   container:
     dockerfile: .ci/Dockerfile
-    cpu: 4
-    memory: 16G
+    cpu: 8
+    memory: 32G
     use_in_memory_disk: true
   notebook_script: |
-    parallel --joblog exec.log -j4 jupyter nbconvert --to notebook --ExecutePreprocessor.timeout=600 --execute --inplace {} ::: docs/*.ipynb
-    cat exec.log
+    parallel -j8 jupyter nbconvert --to notebook --ExecutePreprocessor.timeout=600 --execute --inplace {} ::: docs/*.ipynb
   website_script: |
     jupyter-book build --keep-going -v docs/
   pages_script: |
