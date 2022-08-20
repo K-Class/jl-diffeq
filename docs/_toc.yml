@@ -22,6 +22,7 @@ parts:
     numbered: True
     chapters:
       - file: ch03-01-neuron
+      - file: ch03-02-coagulation
   - caption: PDE
     numbered: True
     chapters:
