@@ -9,7 +9,8 @@ jupyter_book_task:
     memory: 16G
     use_in_memory_disk: true
   notebook_script: |
-    find . -type f -name "*.ipynb" -print0 | parallel -0 -j4 jupyter nbconvert --to notebook --ExecutePreprocessor.timeout=600 --execute --inplace {}
+    find . -type f -name "*.ipynb" -print0 | parallel -0 --joblog /tmp/log -j4 jupyter nbconvert --to notebook --ExecutePreprocessor.timeout=600 --execute --inplace {}
+    cat /tmp/log
   website_script: |
     jupyter-book build --keep-going -v docs/
   pages_script: |
