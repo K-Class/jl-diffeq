@@ -6,7 +6,7 @@ ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
 # system deps
-RUN apt-get update && apt-get install -y git parallel --no-install-recommends && rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get install -y git parallel --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 # Julia
 ENV JULIA_PATH /usr/local/julia/
@@ -21,6 +21,6 @@ RUN pip install --no-cache-dir -U pip wheel setuptools \
 # Julia environment
 COPY Project.toml Manifest.toml ./
 # COPY src/ src # If you have this
-RUN julia --threads=auto --color=yes --project="" -e 'import Pkg; Pkg.add("IJulia"); Pkg.build("IJulia")' && julia --threads=auto --color=yes --project=@. -e 'import Pkg; Pkg.instantiate()'
+RUN julia --threads=auto --color=yes --project=@. -e 'import Pkg; Pkg.add("IJulia"); Pkg.build("IJulia")' && julia --threads=auto --color=yes --project=@. -e 'import Pkg; Pkg.instantiate()'
 
 CMD ["jupyter-book"]
