@@ -6,7 +6,6 @@ jupyter_book_task:
     dockerfile: .ci/Dockerfile
     cpu: 6
     memory: 24G
-    use_in_memory_disk: true
   notebook_script: |
     parallel -j6 jupyter nbconvert --to notebook --ExecutePreprocessor.timeout=600 --execute --inplace {} ::: docs/*.ipynb
   website_script: |
