@@ -4,10 +4,10 @@ jupyter_book_task:
   auto_cancellation: true
   container:
     dockerfile: .ci/Dockerfile
-    cpu: 4
-    memory: 16G
+    cpu: 6
+    memory: 24G
   notebook_script: |
-    parallel -j4 jupyter nbconvert --to notebook --ExecutePreprocessor.timeout=600 --execute --allow-errors --inplace {} ::: docs/*.ipynb
+    parallel -j6 jupyter nbconvert --to notebook --ExecutePreprocessor.timeout=600 --execute --allow-errors --inplace {} ::: docs/*.ipynb
   website_script: |
     jupyter-book build --keep-going -v docs/
   pages_script: |
