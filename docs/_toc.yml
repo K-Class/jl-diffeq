@@ -23,8 +23,3 @@ parts:
     chapters:
       - file: ch03-01-neuron
       - file: ch03-02-coagulation
-  - caption: PDE
-    numbered: True
-    chapters:
-      - file: ch04-01-heat
-      - file: ch04-02-brusselator

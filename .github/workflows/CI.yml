@@ -48,8 +48,6 @@ jobs:
           - ch02-04-optimization
           - ch03-01-neuron
           - ch03-02-coagulation
-          - ch04-01-heat
-          - ch04-02-brusselator
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
