@@ -1,13 +1,13 @@
 jupyter_book_task:
   env:
     JULIA_VER: "1.8.0"
-    JULIA_NUM_THREADS: "8"
+    JULIA_NUM_THREADS: "6"
     LC_ALL: "C"
   auto_cancellation: true
   container:
     image: python:3.10-slim
-    cpu: 8
-    memory: 32G
+    cpu: 6
+    memory: 24G
     use_in_memory_disk: true
   syspkg_script: apt-get update -q && apt-get install -qqy git parallel wget
   pip_cache:
@@ -25,7 +25,7 @@ jupyter_book_task:
   julia_pakcages_script: |
     julia --color=yes --project=@. -e 'import Pkg; Pkg.instantiate(); Pkg.build("IJulia")'
   notebook_script: |
-    parallel -j8 jupyter nbconvert --to notebook --ExecutePreprocessor.timeout=600 --execute --inplace {} ::: docs/*.ipynb
+    parallel -j6 jupyter nbconvert --to notebook --ExecutePreprocessor.timeout=600 --execute --inplace {} ::: docs/*.ipynb
   build_script: |
     jupyter-book build docs --warningiserror --keep-going -v
   # Requires a PAT `GH_TOKEN` with repo scope
