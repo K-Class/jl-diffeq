@@ -12,7 +12,7 @@ jupyter_book_task:
   syspkg_script: apt-get update -q && apt-get install -qqy git parallel wget
   pip_cache:
     folder: ~/.cache/pip
-    fingerprint_script: echo $PYTHON_VERSION && cat requirements.txt .ci/requirements.txt
+    fingerprint_script: echo $PYTHON_VERSION && cat .ci/requirements.txt
   python_pakcages_script: |
     pip install -r .ci/requirements.txt
   install_julia_script: |
