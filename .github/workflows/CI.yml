@@ -37,6 +37,7 @@ jobs:
       fail-fast: false
       matrix:
         notebook:
+          - index
           - ch01-01-ode
           - ch01-02-sde
           - ch01-03-ensemble
