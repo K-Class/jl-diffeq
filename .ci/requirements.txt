@@ -1,2 +1,2 @@
-jupyter-book==0.13.1
+nbconvert==7.0.0
 # ghp-import==2.1.0
