@@ -23,3 +23,9 @@ parts:
     chapters:
       - file: ch03-01-neuron
       - file: ch03-02-coagulation
+  - caption: Partial Differential Equations
+    numbered: True
+    chapters:
+      - file: ch04-01-fromode
+      - file: ch04-02-heat
+      - file: ch04-03-brusselator
