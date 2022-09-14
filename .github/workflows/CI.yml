@@ -53,6 +53,10 @@ jobs:
           - ch04-01-fromode
           - ch04-02-heat
           - ch04-03-brusselator
+          - ch05-01-firstexample
+          - ch05-02-multishooting
+          - ch05-03-neuralpde-ode
+          - ch05-04-poission
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
