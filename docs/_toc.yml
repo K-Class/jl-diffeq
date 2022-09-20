@@ -23,16 +23,3 @@ parts:
     chapters:
       - file: ch03-01-neuron
       - file: ch03-02-coagulation
-  - caption: Partial Differential Equations
-    numbered: True
-    chapters:
-      - file: ch04-01-fromode
-      - file: ch04-02-heat
-      - file: ch04-03-brusselator
-  - caption: Universal Differential Equations
-    numbered: True
-    chapters:
-      - file: ch05-01-firstexample
-      - file: ch05-02-multishooting
-      - file: ch05-03-neuralpde-ode
-      - file: ch05-04-poission
