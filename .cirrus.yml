@@ -9,7 +9,7 @@ jupyter_book_task:
     memory: 24G
     use_in_memory_disk: true
   notebook_script: |
-    parallel --progress -j${JOBS} jupyter nbconvert --to notebook --ExecutePreprocessor.timeout=600 --execute --inplace {} ::: docs/*.ipynb
+    parallel -j${JOBS} jupyter nbconvert --to notebook --ExecutePreprocessor.timeout=600 --execute --inplace {} ::: docs/*.ipynb
   build_script: |
     jupyter-book build docs/ --warningiserror --keep-going -v
   # Requires a `GH_TOKEN` PAT with repo scope access
