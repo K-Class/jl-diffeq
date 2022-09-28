@@ -1,5 +1,6 @@
 FROM ghcr.io/sosiristseng/docker-jupyterbook:0.13.1
 
+# Supress warning emitted by parallel
 ENV LC_ALL C.UTF-8
 
 # Julia
