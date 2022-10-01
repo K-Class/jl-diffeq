@@ -2,6 +2,6 @@
 
 - [DifferentialEquations.jl](https://github.com/SciML/DifferentialEquations.jl): high-performance solvers of differential equations.
 
-## Other notebooks
+## Related notebooks
 
-- [Partial differential equations](https://sosiris-jlbooks.github.io/pde/)
+- [Partial differential equations](https://sosiristseng.github.io/jl-pde/)
