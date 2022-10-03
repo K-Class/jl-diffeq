@@ -5,8 +5,8 @@ jupyter_book_task:
   auto_cancellation: true
   container:
     dockerfile: .ci/Dockerfile
-    cpu: 6
-    memory: 24G
+    cpu: 4
+    memory: 16G
     use_in_memory_disk: true
   notebook_script: |
     parallel --joblog /tmp/log -j${JOBS} jupyter nbconvert --to notebook --ExecutePreprocessor.timeout=600 --execute --inplace {} ::: docs/*.ipynb
