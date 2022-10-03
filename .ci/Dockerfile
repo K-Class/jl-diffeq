@@ -1,4 +1,4 @@
-FROM ghcr.io/sosiristseng/docker-jupyterbook:0.13.1
+FROM python:3.10-slim
 
 # Supress warning emitted by parallel
 ENV LC_ALL C.UTF-8
@@ -10,8 +10,8 @@ COPY --from=julia:1.8.2 ${JULIA_PATH} /usr/local/
 
 # Python dependencies
 # COPY requirements.txt .
-# RUN pip install --no-cache-dir -U pip wheel setuptools \
-#  && pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -U pip wheel setuptools && \
+    pip install --no-cache-dir nbconvert~=7.0.0
 
 # Julia environment
 COPY Project.toml Manifest.toml ./
@@ -19,4 +19,4 @@ COPY Project.toml Manifest.toml ./
 RUN julia --threads=auto --color=yes --project="" -e 'import Pkg; Pkg.add("IJulia"); Pkg.build("IJulia")' && \
     julia --threads=auto --color=yes --project=@. -e 'import Pkg; Pkg.instantiate()'
 
-CMD ["jupyter-book"]
+CMD ["julia"]
